@@ -31,7 +31,7 @@ runs:
       shell: bash
       run: |
         curl --location 'https://hub.docker.com/v2/repositories/${{ inputs.docker_username }}/' \
-        --header 'Authorization: Bearer ${{ secrets.DOCKER_JWT_TOKEN }}' \
+        --header 'Authorization: Bearer ${{ env.DOCKER_JWT_TOKEN }}' \
         --header 'Content-Type: application/json' \
         --data '{
             "name": "${{ inputs.ecr_repository }}",
