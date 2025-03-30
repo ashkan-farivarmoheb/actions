@@ -19,6 +19,7 @@ runs:
   steps:
     - name: Obtain Docker Hub JWT Token
       id: get-jwt-token
+      shell: bash
       run: |
             token=$(curl -s -X POST https://hub.docker.com/v2/users/login/ \
                 -H "Content-Type: application/json" \
